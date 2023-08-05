@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   end
   root 'tweets#index'
   
+
   get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
+  post 'login', to: 'sessions#create'
+
+  get '/signup', to: 'users#new'
+  post 'signup', to: 'users#create'
+  
   delete '/logout', to: 'sessions#destroy'
 end
